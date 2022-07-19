@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/BDimitrova/BookTalk/issues"
   },
-  "homepage": "https://github.com/BDimitrova/BookTalk#readme"
+  "homepage": "https://github.com/BDimitrova/BookTalk#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
