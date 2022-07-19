@@ -1,0 +1,20 @@
+{
+  "name": "booktalk",
+  "version": "1.0.0",
+  "description": "Back-End Project App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BDimitrova/BookTalk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BDimitrova/BookTalk/issues"
+  },
+  "homepage": "https://github.com/BDimitrova/BookTalk#readme"
+}
