@@ -1,11 +1,12 @@
 const express = require('express');
 const path = require('path');
-const app = express();
-
-app.use(express.urlencoded({extended: true}));
+const cookieParser = require('cookie-parser');
 
 function expressConfig(app) {
-    app.use(express.static(path.join(__dirname, '../public')))
+    app.use(express.static(path.join(__dirname, '../public')));
+    app.use(express.urlencoded({ extended: false }));
+    app.use(cookieParser());
+
 }
 
 module.exports = expressConfig;
