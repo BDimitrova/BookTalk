@@ -1,5 +1,4 @@
 const jwt = require('../utils/jwt');
-
 const User = require('../models/User');
 const { JWT_Secret } = require('../constants');
 
@@ -21,7 +20,7 @@ exports.login = async ({ email, password }) => {
     let payload = {
         _id: user._id,
         email: user.email,
-        username: user.username,
+        name: user.name,
     }
 
     let token = await jwt.sign(payload, JWT_Secret);

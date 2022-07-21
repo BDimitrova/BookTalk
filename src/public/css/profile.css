@@ -1,4 +1,4 @@
-.profile-card{
+.profile-card {
   width: 420px;
   overflow: hidden;
   text-align: center;
@@ -7,70 +7,71 @@
   margin: 0 auto;
   margin-top: 50px;
 }
- 
-.top-section{
+
+.top-section {
   padding: 60px 40px;
   background: #27ae60;
 }
- 
-.message,.notif{
+
+.message,
+.notif {
   position: absolute;
   top: 40px;
   font-size: 20px;
   cursor: pointer;
   color: #ffffff50;
 }
- 
-.message{
+
+.message {
   right: 40px;
 }
- 
-.notif{
+
+.notif {
   left: 40px;
 }
- 
-.pic{
+
+.pic {
   width: 150px;
   height: 150px;
   margin: auto;
   margin-bottom: 20px;
-  border: 2px solid #FF6D51;
+  border: 2px solid #ff6d51;
   border-radius: 50%;
   padding: 8px;
   position: relative;
 }
- 
-.pic:after{
+
+.pic:after {
   content: "";
   width: 100%;
   height: 100%;
   position: absolute;
-  border: 1px solid #FF6D51;
+  border: 1px solid #ff6d51;
   left: 0;
   top: 0;
   box-sizing: border-box;
   border-radius: 50%;
 }
- 
-.pic img{
+
+.pic img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
- 
-.name{
+
+.name {
   color: #f1f1f1;
   font-size: 28px;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
- 
-.email{
+
+.email {
   font-size: 18px;
   color: #222;
 }
- 
-.bottom-section{
+
+.bottom-section {
   background: #f1f1f1;
   padding: 60px 40px;
   position: relative;
@@ -80,31 +81,31 @@
   font-size: 28px;
   text-transform: uppercase;
 }
- 
-.border{
+
+.border {
   width: 1px;
   height: 20px;
   background: #bbb;
   margin: 0 30px;
 }
- 
-.bottom-section span{
+
+.bottom-section span {
   font-size: 14px;
   display: block;
 }
- 
-.social-media{
+
+.social-media {
   position: absolute;
   width: 100%;
   top: -30px;
   left: 0;
   z-index: 1;
 }
- 
-.social-media i{
+
+.social-media i {
   width: 60px;
   height: 60px;
-  background: #FF6D51;
+  background: #ff6d51;
   border-radius: 50%;
   color: #f1f1f1;
   font-size: 20px;
@@ -112,13 +113,13 @@
   margin: 0 10px;
   position: relative;
 }
- 
-.social-media i:after{
+
+.social-media i:after {
   content: "";
   width: 100%;
   height: 100%;
   position: absolute;
-  background: #FF6D51;
+  background: #ff6d51;
   left: 0;
   top: 0;
   box-sizing: border-box;
@@ -126,8 +127,8 @@
   z-index: -1;
   transition: 0.4s linear;
 }
- 
-.social-media i:hover:after{
+
+.social-media i:hover:after {
   transform: scale(1.4);
   opacity: 0;
 }
@@ -136,11 +137,14 @@
   width: 100rem;
   position: relative;
   margin: 0 auto;
+  margin-top: 15px;
   box-shadow: 0 0 10px #00000070;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-bottom: 20px;
+  background-color: #f1f1f1;
+  opacity: 0.9;
 }
 
 .book {
@@ -154,7 +158,7 @@
   color: rgb(19, 66, 27);
 }
 
-img {
+.info-container-profile img {
   width: 20rem;
   height: 30rem;
   border-radius: 30px;
