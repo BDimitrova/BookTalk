@@ -3,14 +3,14 @@ const authServices = require('../services/authServices');
 const {AUTH_COOKIE_NAME} = require('../constants');
 
 router.get('/login', (req, res) => {
-    res.render('auth/login');
+    res.render('auth/login', { title: 'Login Page' });
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
     try {
-        let token = authServices.login({
+        let token = await authServices.login({
             email,
             password
         });
@@ -25,11 +25,10 @@ router.post('/login', (req, res) => {
 })
 
 router.get('/register', (req, res) => {
-    res.render('auth/register');
+    res.render('auth/register', { title: 'Register Page' });
 });
 
 router.post('/register', (req, res) => {
-    console.log(req.body);
     const { username, email, password, confPass } = req.body;
 
     if (password !== confPass) {
