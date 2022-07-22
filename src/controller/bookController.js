@@ -17,10 +17,11 @@ router.post('/create-review', async (req, res) => {
 });
 
 router.get('/:bookId/details', async (req, res) => {
-    let details = await bookServices.getOne(req.params.bookId);
-    let bookData = details.toObject();
-    console.log(bookData);
-    res.render('books/details', { ...bookData });
+    let book = await bookServices.getOne(req.params.bookId);
+    let bookData = book.toObject();
+    let isOwner = bookData.owner == req.user?._id;
+
+    res.render('books/details', { ...bookData, isOwner });
 })
 
 module.exports = router;
