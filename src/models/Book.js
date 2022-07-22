@@ -18,6 +18,10 @@ let bookSchema = new mongoose.Schema({
         required: true,
         validate: /^https?:\/\//i
     },
+    review: {
+        type: String,
+        required: true,
+    },
     stars: {
         type: Number,
         required: true,
