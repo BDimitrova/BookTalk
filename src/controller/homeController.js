@@ -5,15 +5,15 @@ router.get('/', (req, res) => {
 });
 
 router.get('/profile', (req, res) => {
-    res.render('profile');
+    res.render('profile', {title: 'Profile'});
 });
 
 router.get('/catalog', (req, res) => {
-    res.render('catalog');
+    res.render('catalog', {title: 'Catalog'});
 });
 
 router.get('/create-review', (req, res) => {
-    res.render('create');
+    res.render('create', {title: 'Create Review'});
 });
 
 module.exports = router;

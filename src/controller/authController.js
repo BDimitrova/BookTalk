@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const authServices = require('../services/authServices');
-const {AUTH_COOKIE_NAME} = require('../constants');
+const { AUTH_COOKIE_NAME } = require('../constants');
 
 router.get('/login', (req, res) => {
     res.render('auth/login', { title: 'Login Page' });
@@ -14,14 +14,14 @@ router.post('/login', async (req, res) => {
             email,
             password
         });
-    
+
         res.cookie(AUTH_COOKIE_NAME, token);
         res.redirect('/');
     } catch (err) {
         // TODO: return error message
         res.end();
     }
-    
+
 })
 
 router.get('/register', (req, res) => {
@@ -48,6 +48,11 @@ router.post('/register', (req, res) => {
         //todo: return error message
     }
 
-})
+});
+
+router.get('/logout', (req, res) => {
+    res.clearCookie(AUTH_COOKIE_NAME);
+    res.redirect('/');
+});
 
 module.exports = router;
