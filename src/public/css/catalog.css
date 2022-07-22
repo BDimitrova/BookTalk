@@ -16,13 +16,18 @@ html {
 .container .book {
   background-color: #27ae60;
   border-radius: 30px;
-  margin: 20px 30px;
-  margin-bottom: 10px;
+  margin: 0 30px;
   width: 25rem;
   height: 52rem;
   position: relative;
   color: rgb(19, 66, 27);
   box-shadow: 0 0 10px #00000070;
+}
+
+.catalog h2 {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 26px;
 }
 
 .container img {
@@ -49,4 +54,13 @@ html {
 
 .details:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.no-record {
+  font-size: 30px;
+  font-style: italic;
+  border: 1px solid rgba(0, 0, 0, 0.556);
+  padding: 20px;
+  margin-top: 10%;
+  box-shadow: 0 0 10px #00000070;
 }

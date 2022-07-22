@@ -2,8 +2,9 @@ const router = require('express').Router();
 
 const bookServices = require('../services/bookServices');
 
-router.get('/catalog', (req, res) => {
-    res.render('books/catalog', {title: 'Catalog'});
+router.get('/catalog', async (req, res) => {
+    let book = await bookServices.getAll();
+    res.render('books/catalog', {title: 'Book Catalog', book });
 });
 
 router.get('/create-review', (req, res) => {
