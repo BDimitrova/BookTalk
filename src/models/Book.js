@@ -12,10 +12,21 @@ let bookSchema = new mongoose.Schema({
     image: {
         type: String,
         required: true,
+        validate: /^https?:\/\//i
     },
     stars: {
         type: Number,
         required: true,
+    },
+    wishingList: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref: 'User',
+        }
+    ],
+    owner: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User'
     }
 });
 
