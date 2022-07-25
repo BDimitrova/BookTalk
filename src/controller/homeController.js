@@ -1,17 +1,17 @@
 const router = require('express').Router();
 
-const User = require('../models/User');
+const { isAuth } = require('../middlewares/authMiddleware');
 const bookServices = require('../services/bookServices');
 
 router.get('/', (req, res) => {
     res.render('home/home');
 });
 
-router.get('/profile', async (req, res) => {
+router.get('/profile', isAuth, async (req, res) => {
     const userId = req.user._id;
     let wished = await bookServices.getMyWishBook(userId);
-    console.log(wished);
-
+    const username = req.user;
+    console.log(username);
     res.render('profile', { title: 'Profile', wished });
 });
 
