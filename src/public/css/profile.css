@@ -164,3 +164,11 @@
   height: 40rem;
   border-radius: 30px;
 }
+
+.no-record-in-profile {
+  font-size: 30px;
+  font-style: italic;
+  border: 1px solid rgba(0, 0, 0, 0.556);
+  padding: 20px;
+  margin: 3%;
+}

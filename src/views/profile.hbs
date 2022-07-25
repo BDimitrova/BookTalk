@@ -7,7 +7,7 @@
                 <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvPnjeYyAvdnoC_gdZYcJJK_f9f8jZoieK1-JG4YLc3SES_JeHlBbhDEtlyiA2atnl2W0&usqp=CAU">
             </div>
-            <div class="name">{{user.username}}</div>
+            <div class="name"></div>
             <div class="email">{{user.email}}</div>
         </div>
 
@@ -22,8 +22,10 @@
         </div>
     </div>
     <div class="wish-books">
-        {{#each book}}
+        {{#each wished}}
             {{> book-card-profile}}
+        {{else}}
+        <h2 class="no-record-in-profile">There are no book review found yet...</h2>
         {{/each}}
     </div>
 </section>

@@ -38,6 +38,11 @@ let bookSchema = new mongoose.Schema({
     }
 });
 
+bookSchema.method('getWished', function () {
+    return this.wishingList.map(x => x._id);
+})
+
+
 let Book = mongoose.model('Book', bookSchema);
 
 module.exports = Book;

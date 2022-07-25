@@ -21,7 +21,24 @@ router.get('/:bookId/details', async (req, res) => {
     let bookData = book.toObject();
     let isOwner = bookData.owner == req.user?._id;
 
-    res.render('books/details', { ...bookData, isOwner });
+    let wished = book.getWished();
+
+    console.log(wished);
+
+    let isWished = req.user && wished.some(c => c._id == req.user?._id);
+
+    res.render('books/details', { ...bookData, isOwner, isWished });
+});
+
+router.get('/:bookId/wish', async (req, res) => {
+    const bookId = req.params.bookId
+    let book = await bookServices.getOne(bookId);
+
+    book.wishingList.push(req.user._id);
+    await book.save();
+    console.log(book)
+
+    res.redirect(`/books/${req.params.bookId}/details`);
 })
 
 module.exports = router;

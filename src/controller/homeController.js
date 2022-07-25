@@ -8,9 +8,11 @@ router.get('/', (req, res) => {
 });
 
 router.get('/profile', async (req, res) => {
-    // let book = await bookServices.getWishingBook(req.user._id);
+    const userId = req.user._id;
+    let wished = await bookServices.getMyWishBook(userId);
+    console.log(wished);
 
-    res.render('profile', { title: 'Profile' });
+    res.render('profile', { title: 'Profile', wished });
 });
 
 module.exports = router;
