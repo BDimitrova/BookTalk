@@ -22,13 +22,13 @@ router.post('/login', isGuest, async (req, res) => {
         res.render('auth/login', { error: error.message });
     }
 
-})
+});
 
 router.get('/register', isGuest, (req, res) => {
     res.render('auth/register', { title: 'Register Page' });
 });
 
-router.post('/register', isGuest, (req, res) => {
+router.post('/register', isGuest, async (req, res) => {
     const { username, email, password, confPass } = req.body;
 
     if (password !== confPass) {
@@ -37,7 +37,8 @@ router.post('/register', isGuest, (req, res) => {
     };
 
     try {
-        authServices.register({
+
+        await authServices.register({
             username,
             email,
             password
@@ -45,10 +46,22 @@ router.post('/register', isGuest, (req, res) => {
 
         res.redirect('/')
     } catch (error) {
-        res.render('auth/register', { error: error.message});
+        res.render('auth/register', { error: getErrorMessage(error) });
     }
 
 });
+
+function getErrorMessage(error) {
+    console.log(error);
+    let errorsArr = Object.keys(error.errors);
+
+    if (errorsArr.length > 0) {
+        return error.errors[errorsArr[0]];
+    } else {
+        return error.message
+    }
+
+}
 
 router.get('/logout', isAuth, (req, res) => {
     res.clearCookie(AUTH_COOKIE_NAME);

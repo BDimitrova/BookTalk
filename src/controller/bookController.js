@@ -25,7 +25,7 @@ async function checkIsOwner(req, res, next) {
 
 router.get('/catalog', async (req, res) => {
     let book = await bookServices.getAll();
-    res.render('books/catalog', { title: 'Book Catalog', book });
+    res.render('books/catalog', { title: 'Book Catalog', book});
 });
 
 router.get('/create-review', isAuth, (req, res) => {
